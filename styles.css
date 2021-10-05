@@ -1,0 +1,9 @@
+body {
+  background-color: powderblue;
+}
+div, li {
+  color: blue;
+}
+p, ul {
+  color: red;
+}
