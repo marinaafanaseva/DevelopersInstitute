@@ -1,0 +1,59 @@
+body {
+    box-sizing: border-box;
+    text-align: center;
+}
+.sectiongridarea {
+    display: grid;
+    width: 60%;
+    height: 80vh;
+    grid-template-rows: repeat(9,1fr);
+    grid-template-columns: repeat(7,1fr);
+    border: 1px solid black;
+    grid-gap: 10px;
+    padding: 1%;
+    margin: auto;
+
+    grid-template-areas:
+    "A A A A A A A"
+    "B B B C C C C"
+    "B B B C C C C"
+    "D D D C C C C"
+    "D D D E E E E"
+    "D D D E E E E"
+    "F F F F F G G"
+    "F F F F F G G"
+    "H H H H H H H";
+}
+
+.bluebox {
+    grid-area : A;
+    background-color: rgb(173, 191, 230);
+}
+.lilacbox {
+    grid-area : B;
+    background-color: lightpink;
+}
+.sandbox {
+    grid-area : C;
+    background-color: rgba(255, 238, 0, 0.842);
+}
+.swampbox {
+    grid-area : D;
+    background-color: rgba(6, 128, 6, 0.897);
+}
+.graybox {
+    grid-area : E;
+    background-color: rgba(128, 128, 128, 0.884);
+}
+.emeraldbox {
+    grid-area : F;
+    background-color: rgba(0, 128, 90, 0.795);
+}
+.lilacbox2 {
+    grid-area : G;
+    background-color: lightpink ;
+}
+.sandbox2 {
+    grid-area : H;
+    background-color: rgba(255, 238, 0, 0.842)
+} 
