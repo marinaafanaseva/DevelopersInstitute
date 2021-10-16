@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+
+<h4>The Game</h4>    
+<p>Guess a random number from computer!</p>
+    
+<button onclick="playTheGame()">Start</button>
+
+<p id="demo"></p>
+
+<script>  
+
+function playTheGame() {    
+    var txt;
+    let r = confirm("Do you want to play? Yes or No?");
+    if (r == true) {
+        alert("You are welcome! Start to play!");        
+        checkNumber();
+    } else {
+        txt = "No problem, goodbye!";
+        document.getElementById("demo").innerHTML = txt;
+    }        
+}
+
+    function checkNumber() {
+        var personNumber = parseInt(prompt("Please enter a number between 0 and 10"));   
+        if (isNaN(personNumber)) {
+            txt = "Sorry Not a number, try again";
+            document.getElementById("demo").innerHTML = txt;
+
+        } else if (personNumber > 10) {
+            txt = "Sorry Not a good number, try again";
+            document.getElementById("demo").innerHTML = txt; 
+    
+        } else {    
+            let computerNumber = Math.floor(Math.random() * 11);
+            console.log(computerNumber);    
+            test(personNumber, computerNumber);
+        }
+    }
+
+function test(personNumber, computerNumber) {
+    let count = 0;  
+    while (count != 3) {
+    if (personNumber === computerNumber) {
+        txt = "WINNER";
+        document.getElementById("demo").innerHTML = txt; 
+        return;
+    }
+    if (personNumber > computerNumber) {
+        personNumber = parseInt(prompt("Your number is bigger then the computer’s, guess again"));
+        count = count + 1;
+    } else {
+      personNumber = parseInt(prompt("Your number is smaller then the computer’s, guess again"));
+      count = count + 1;
+    }
+    }
+      txt = "Out of chances, bye";
+      document.getElementById("demo").innerHTML = txt;
+      return;
+}
+</script>
+
+</body>
+</html>
+
+<!--let userNumber = parseInt(prompt("Enter number between 0 and 10")); > 
