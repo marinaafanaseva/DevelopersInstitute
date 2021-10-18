@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function restBeer() {
+        let A = 10;         //let startBeer
+        let count = 0;      //consumtion of beeer
+        let C = A - count;  //rest of beer
+        
+        while (count <= C) {   
+              
+            if (count < C) {      
+                console.log("Rest of beer is", C);
+                console.log("Take", count, "beer");
+            } else {
+                console.log("Rest of beer is", C);
+                console.log("Take", count, "beer");
+                console.log("You drank all beer");
+            }          
+            //C=A - count;
+            C-=count;
+            count ++;
+        }
+    }
+    restBeer()
+    </script>
+</body>
+</html>
