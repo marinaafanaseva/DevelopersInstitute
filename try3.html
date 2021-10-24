@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="try3.css">
+</head>
+<body>
+    <section class="container">
+        <div class="box1">CookBook & BulletinBoard</div>            
+            <button id="cookingBtn" type="button">Cooking</button>       <!--?? how to put buttons inside box1 on the right ?-->
+            <button id="advertisingBtn" type="button">Advertising</button>
+        <div class="box2" id = "box2">2</div>
+        <div class="box3" id = "box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6" id = "box6">6</div>
+        <div class="box7" onmouseover="this.style.backgroundColor='red'"    
+        onmouseout="this.style.backgroundColor='pink'">7</div>              <!--change of element color by mouse over it and return back after-->
+        <div class="box8">8</div>
+
+        
+    </section>
+    <script>
+        let box2 = document.getElementById("box2")
+        let box3 = document.getElementById("box3")
+        let cookingBtn = document.getElementById("cookingBtn")
+        let advertisingBtn = document.getElementById("advertisingBtn")
+
+        cookingBtn.addEventListener ("click", function() {      //change of element color by click on button
+            box3.style.backgroundColor = "yellow"             //?? can do it in more common way? F.e. it needs to change color of divs id=[3, 4, 6, 7] ?? 
+            box2.style.backgroundColor = "black"            //?? how return 'previous color'?
+        });
+
+        advertisingBtn.addEventListener ("click", function() {
+            box2.style.backgroundColor = "pink"
+            box3.style.backgroundColor = "red"                    
+        });
+                                            //?? how to remove box6 to place of box3, box3 to place of box4, box4 to place of box6 ??
+                                            //?? how to delete box6 ??
+       
+
+
+   
+    </script>
+    
+</body>
+</html>
