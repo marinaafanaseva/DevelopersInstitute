@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Sentence</p>
+<script>
+
+let groceries1 = {
+    fruits : ["pear", "apple", "banana"],
+    vegetables: ["tomatoes", "cucumber", "salad"],
+    totalPrice : "20$",
+    other : {
+        payed : true,
+        meansOfPayment : ["cash", "creditCard"]
+    }
+}
+console.log(groceries1);
+
+let groceries2 = groceries1;            //copy by reference
+
+console.log(groceries1 == groceries2);  //checking return 'true'
+
+groceries1.totalPrice = "35$"
+console.log(groceries2.totalPrice)      //return '35$'
+
+groceries1.payed = "false"
+console.log(groceries2.payed)      //return 'false'
+
+</script>
+</body>
+</html>
