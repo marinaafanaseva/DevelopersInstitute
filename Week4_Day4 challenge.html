@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+class Video {
+  constructor(title, uploader, time) {
+    this.title = title;
+    this.uploader = uploader;
+    this.time = time;
+    this.company = "Netflix";
+  }
+
+  watch (sentence="date"){
+    return `Uploader: ${this.uploader} Title: ${this.title} Time: ${this.time}`
+  }
+};
+
+const firstVideo = new Video("Harry Potter", "John", 60);
+console.log(firstVideo)
+console.log(firstVideo.title)
+console.log(firstVideo.watch("date"))
+
+const secondVideo = new Video("Star trek", "Mary", 100);
+console.log(secondVideo)
+secondVideo.time = 30
+console.log(secondVideo)
+    
+</script>
+    
+</body>
+</html>
