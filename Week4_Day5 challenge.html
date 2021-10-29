@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id = "Check anagram"></p>
+
+<script>
+let string1 = ["astronomer"];
+let string2 = ["moon starer"];
+string1 = string1.trim();
+string2 = string2.trim();
+
+function checkAnagram (string1, string2) {
+    if (string1.length != string2.length) {
+        console.log ("It is not anagram")
+    } else {
+        console.log ("Anagram is " + string1.split("") === string2.split("") ? 1 : -1)  //check if composition of letters is the same in both string      
+    }
+}
+checkAnagram();
+
+</script>
+
+</body>
+</html>
+
+//Create a function that takes in two strings as two parameters and returns a boolean that indicates 
+//whether or not the first string is an anagram of the second string.
+//Help: An anagram is another word or phrase formed by rearranging letters of the first word
+//Trim whitespace prior to comparison.
+//PLAN of SOLUTION:
+//* declare string1, string2 and give them values;
+    //transform each string to array from separate characters by split("") METHOD;
+//* trim whitespaces from each array;
+//* meassure such property of string as length;
+//* sort characters of string by alphabet;
+//* create a function that returns boolean result of comparison two arrays from strings along following algorithm:
+//    ** if length of arrays aren't the same => result = false (it is not anagram),
+//    ** if length of arrays are the same => compare X-Y, where X,Y = 2a4c7m10s (characters by alphabet and their amonts - example),
+//    ** if X-Y = 0 => result = true (it is anagram),
+//    ** if X-Y = 0 => result = false (it is not anagram).
