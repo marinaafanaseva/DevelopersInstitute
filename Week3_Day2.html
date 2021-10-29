@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Mad Libs</h1>
+
+<ul>
+	<li>Noun: <input type="text" id="noun"></li>
+	<li>Adjective: <input type="text" id="adjective"></li>
+	<li>Someone's Name: <input type="text" id="person"></li>
+	<li>Verb: <input type="text" id="verb"></li>
+	<li>A place: <input type="text" id="place"></li>
+</ul>
+
+<button id="lib-button">Lib it!</button>
+
+<p>Generated story:
+	<span id="story"></span>
+</p>
+
+<script>
+let noun = document.getElementById('noun');
+let adj = document.getElementById('adjective');
+let person = document.getElementById('person');
+let verb = document.getElementById('verb');
+let place = document.getElementById('place');
+let submitBtn = document.getElementById('lib-button');
+let story = document.getElementById('story');
+
+// this function gets the current values for all the inputs,
+// stores them in an array, and returns that array
+function  getInputs() {
+	return [noun.value, verb.value, adj.value, person.value, place.value]
+}
+
+// this function will return true if all inputs aren't empty
+// if an input is empty, the function returns false
+function validateInputs() {
+	// getting the current values for all the inputs and storing them in a variable
+	let inputs = getInputs();
+	for (let input of inputs) {
+		// trimming input to make sure inputs aren't just spaces
+		input = input.trim();
+		
+		// doing if(!input) is similar to doing if(input === "")
+		// we're just checking if the input is empty
+		if (!input) return false
+	}
+	return true
+}
+
+// this function resets the values in the original input fields,
+// so we canadd new inputs later
+function resetInputs() {
+	noun.value = "";
+	adj.value = "";
+	verb.value = "";
+	person.value = "";
+	place.value = "";
+}
+
+function generateStory() {
+	// before doing anything with the inputs, 
+	// make sure none of them are empty
+	// if validateInputs function returns false, we exit out of this function
+	// and alert the user that their input is incorrect
+	if (!validateInputs()) {
+		alert("Please make sure all your input fields aren't empty!");
+		return;
+	}
+	
+	// use the values in the inputs to create a story
+	story.innerText =  "There was a " + adj.value + " " + noun.value +
+			" named " + person.value + " who " + 
+			verb.value + " in " + place.value + ".";
+	
+	resetInputs()
+}
+
+// generate a new story based on the values in the input fields
+// whenever someone clicks on the submitBtn (Lib it!)
+submitBtn.addEventListener('click', generateStory)
+
+</script>
+    
+</body>
+</html>
