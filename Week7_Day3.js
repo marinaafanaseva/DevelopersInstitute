@@ -4,13 +4,13 @@ fs.readFile('https://github.com/devtlv/Right-Left_Week7JS/blob/main/RightLeft.tx
 	if (err) {
 		console.log(err)
 	} else {
-		const data = data.toString()
+		const x = data.toString()
 		let position = 0
 		let steps = 0
 		let first = 0
-		for (let i = 0; i < game.length; i++) {
+		for (let i = 0; i < x.length; i++) {
 			steps++
-			if (game[i] === `>`) {
+			if (x[i] === `>`) {
 				position++
 			} else {
 				position--
@@ -20,7 +20,7 @@ fs.readFile('https://github.com/devtlv/Right-Left_Week7JS/blob/main/RightLeft.tx
 				first = 1
 			}
 		}
-		console.log(`total stepd: ${position}`)
+		console.log(`total steps: ${position}`)
 	}
 })
 
